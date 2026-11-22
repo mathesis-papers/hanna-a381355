@@ -1,0 +1,15 @@
+{
+  "id": "hanna-a381355",
+  "revision": 2,
+  "problem_ids": ["hanna-a381355", "oeis-a393867-prime-power-shift-log-derivative", "oeis-a393867-all-terms-odd"],
+  "topic": "Hanna's OEIS A381355 revision 13 COMMENTS conjecture and the shifted-power conjectures in A393867 and A393868",
+  "title": "Prime-index divisibility in Hanna's OEIS A381355: Revision 13, COMMENTS, and shifted-power siblings",
+  "creators": [
+    {"name": "Haobo Ma", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Wenlin Zhang", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "We prove Paul D. Hanna's conjecture in the COMMENTS of OEIS A381355, revision 13 (March 12, 2025): its nth term is divisible by the nth prime for every n>1. The source series of A381353 exists uniquely over the rationals and has integer coefficients. More generally, positive exponents m_n with gcd(m_n,n!)=1 define an integral source series with any prescribed integer linear coefficient, and m_n divides the nth logarithmic coefficient. The same argument proves companion integrality and the prime divisibility conjecture in A393867. A parity argument proves its oddness conjecture and the even-run conjecture in A393868. We also correct the coefficient index in A393866, FORMULA (2), and give a general nonzero-diagonal congruence.",
+  "summary": "Written proofs establish the original and shifted-power divisibilities, coefficient pairing, odd logarithmic coefficients, even completed parity runs, prescribed-diagonal congruences and variable-shift extensions. Three pinned Lean files cover the original prime result, the shifted prime result and index correction, and shifted coefficient pairing and oddness. Exact finite checks cover both source families through degree 64 and 48 further parameter combinations through degree 24. The A393866 primorial-limit observation is not covered.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/de81f09d1b5868b1ef5f62c9c8cab94962481c39/D5/S1/Recurrence/Invariants/HannaPrimeIndexLogDivisibility.lean"
+}

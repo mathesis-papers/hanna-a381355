@@ -1,0 +1,40 @@
+{
+  "generated_paths": [
+    "CHANGELOG.md",
+    "CITATION.cff",
+    "CONTRIBUTING.md",
+    "LICENSES/CC-BY-4.0.txt",
+    "README.md",
+    "formalization/nodes.json",
+    "manuscript/README.md",
+    "manuscript/metadata.json",
+    "manuscript/note.tex",
+    "manuscript/verification-siblings.json",
+    "manuscript/verification.json",
+    "manuscript/verify.py",
+    "manuscript/verify_siblings.py",
+    "paper.json",
+    "paper.pdf",
+    "source.archive"
+  ],
+  "generator_version": "0.1.0",
+  "sha256": {
+    "CHANGELOG.md": "92029747e7fd36a2547367c8e39e37f156761fe3f92573c8c6e025ace99b0e01",
+    "CITATION.cff": "5bdde2139929631d763e678ee29b9eec5bc41a34499018a0e4994bfa76a195b4",
+    "CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
+    "LICENSES/CC-BY-4.0.txt": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
+    "README.md": "bdf42beef6a3a0115c2dcabe2f07331de88f3299e25c6c70c5754991ce8e076b",
+    "formalization/nodes.json": "af3899e1145a8bf861923d0f96b6bb95e2834ce2bccc11726f90d53bb6c975f2",
+    "manuscript/README.md": "acb578ea69c50b9500a2084ee28b07676fea722b19e21155ec84390591d48375",
+    "manuscript/metadata.json": "6be5a0ce5495a47131b9719dfed13441723e9d51bb1f2ec66ccdeb76c35805d0",
+    "manuscript/note.tex": "af660481b6cb99024d7a9489053464bde2e1b2ad22324642ec495de9eabda061",
+    "manuscript/verification-siblings.json": "6ebeae8d8627a3f8923ec8c3c4ee07e0df8b2e93cedb42a08dcd8a177f9efa01",
+    "manuscript/verification.json": "33a88cd93cbe41a8e74b33b8e2f1610a25756e27b3820df41d26fb041bba99ca",
+    "manuscript/verify.py": "f60c7f7f726b178981a23a3eac732e6a88ef7d573d2b40e39afe3f799477bf55",
+    "manuscript/verify_siblings.py": "d49c370cd2dbbc5b7e2b237b9ea031d54c5e3b6207541e7e862e0782b360b741",
+    "paper.json": "4d3fe5e71407f6c2b4537121a26ce1aee33f0a1e1352628d29f13f3c32145cdf",
+    "paper.pdf": "2b71f0ac1be58a93b9886b80fae96eb85162e8f2a0ec758b37efde6f2af919da",
+    "source.archive": "51183a742f38fba92350534395cff9779b8e6e69a5394cf801aa489b18e86b87"
+  },
+  "snapshot_identity": "35569cc98bb993f1cf26faf18b0d1aa09933d888986e069b7b8dda71cd2ddf98"
+}

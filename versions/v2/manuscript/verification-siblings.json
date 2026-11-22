@@ -1,0 +1,58 @@
+{
+  "status": "ALL_CHECKS_OK",
+  "arithmetic": "exact integers and rational numbers",
+  "shifted_indices": [
+    2,
+    64
+  ],
+  "source_data_matches": {
+    "A393866": [
+      0,
+      20
+    ],
+    "A393867": [
+      1,
+      20
+    ]
+  },
+  "paired_parity_indices": [
+    0,
+    63
+  ],
+  "logarithmic_oddness_indices": [
+    1,
+    64
+  ],
+  "complete_run_lengths": [
+    2,
+    4,
+    2,
+    4,
+    8,
+    2,
+    6,
+    4,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2,
+    4
+  ],
+  "printed_formula_counterexample": {
+    "source": "A393866 revision 17 FORMULA (2)",
+    "index": 2,
+    "coefficient_x_squared_of_derivative_quotient": 25,
+    "prime_at_index": 3,
+    "remainder": 1,
+    "correct_coefficient_degree": "n-1"
+  },
+  "inhomogeneous_family_count": 24,
+  "inhomogeneous_indices": [
+    2,
+    24
+  ],
+  "congruence": "a_n = n*d_n modulo m_n when [x^n]F^m_n = m_n*d_n",
+  "scope": "Finite coefficient identities; the all-index assertions have written proofs in note.tex."
+}

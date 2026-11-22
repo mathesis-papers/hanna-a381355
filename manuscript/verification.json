@@ -1,0 +1,74 @@
+{
+  "status": "ALL_CHECKS_OK",
+  "arithmetic": "exact integers and rational numbers",
+  "original_indices": [
+    2,
+    64
+  ],
+  "data_matches": {
+    "A381353": [
+      0,
+      15
+    ],
+    "A381355": [
+      1,
+      15
+    ]
+  },
+  "sibling_data_indices": [
+    2,
+    13
+  ],
+  "displayed_power_rows": [
+    3,
+    5,
+    7
+  ],
+  "displayed_max_degree": 8,
+  "exponent_schedules": [
+    "nth-prime",
+    "least-prime-above-n",
+    "least-prime-above-2n",
+    "square-of-least-prime-above-n"
+  ],
+  "integer_slopes": [
+    -3,
+    -1,
+    0,
+    1,
+    2,
+    3
+  ],
+  "family_indices": [
+    2,
+    24
+  ],
+  "family_count": 24,
+  "checks": [
+    "rational construction before integrality",
+    "binary powers versus coefficient recurrence",
+    "zero diagonal equations",
+    "coefficient congruences",
+    "logarithmic divisibility",
+    "inverse and logarithmic recurrences",
+    "derivative identity",
+    "rational perturbation law",
+    "companion integrality",
+    "formal exponential reconstruction",
+    "excluded-index and noncoprime examples"
+  ],
+  "initial_a_over_prime": [
+    -1,
+    2,
+    -5,
+    11,
+    -30,
+    61,
+    -57,
+    -610,
+    4753,
+    -12326,
+    -237614
+  ],
+  "scope": "Finite coefficient identities; the all-index theorems have written proofs in note.tex."
+}

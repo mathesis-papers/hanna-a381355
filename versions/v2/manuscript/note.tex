@@ -1,0 +1,364 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,tabularx,longtable}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\coeff}[1]{[x^{#1}]}
+\title{Prime-index divisibility in Hanna's OEIS A381355\\
+\large Revision 13, COMMENTS, and shifted-power siblings}
+\author{Haobo Ma\thanks{ChronoAI Pte Ltd, Singapore.}\and
+Wenlin Zhang\thanks{National University of Singapore; ChronoAI Pte Ltd, Singapore.}}
+\date{November 6, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove Paul D. Hanna's conjecture in the COMMENTS of OEIS A381355,
+revision 13 (March 12, 2025): its $n$th term is divisible by the $n$th
+prime for every $n>1$. The source series of A381353 exists uniquely over
+$\mathbb Q$ and has integer coefficients. More generally, if positive
+integers $m_n$ satisfy $\gcd(m_n,n!)=1$, the equations
+$\coeff n F^{m_n}=0$ for $n\ge2$, with $F(0)=1$ and prescribed integer
+$\coeff1F$, define an integral series whose logarithmic coefficient
+$\coeff{n-1}F'/F$ is divisible by $m_n$.
+The same argument proves companion integrality and the prime divisibility
+conjecture in A393867. A parity argument proves its oddness conjecture and
+the even-run conjecture in A393868. We also correct the coefficient index
+in A393866, FORMULA (2), and give a general nonzero-diagonal congruence.
+\end{abstract}
+
+\section{The conjecture and conventions}
+Let $p_n$ be the $n$th prime, with $p_1=2$. Hanna's A381353
+\cite{source} defines a generating function by
+\begin{equation}\label{eq:source}
+ F(x)=1+x+\sum_{n\ge2}f_nx^n,\qquad \coeff n F(x)^{p_n}=0\quad(n\ge2).
+\end{equation}
+The initial coefficients $f_0=f_1=1$ are fixed by its PROGRAM section.
+The sequence A381355 \cite{target} is defined, with offset one, by
+\begin{equation}\label{eq:target}
+ \frac{xF'(x)}{F(x)}=\sum_{n\ge1}a_nx^n,
+ \qquad a_n=\coeff{n-1}\frac{F'(x)}{F(x)}.
+\end{equation}
+Its COMMENTS section states: ``Conjecture: a(n) is divisible by prime(n)
+for n > 1.'' We establish it and the existence and integrality implicit
+in these definitions. All series below are formal; no analytic convergence
+is required.
+
+The argument is a coefficient construction followed by a formal derivative
+identity. Primality can be replaced by coprimality with a factorial.
+We give that general statement so that the arithmetic hypothesis and the
+companion integrality property follow from the same calculation.
+The equivalent A381353, revision 19, COMMENTS, statement for
+$\coeff{n-1}F'/F$ says ``is divisible by prime(n) for n > 1.''
+The observation first appears in
+\href{https://oeis.org/history/view?seq=A381353&v=8}{A381353, revision 8, COMMENTS}
+(March 11, 2025, 21:29:48 EDT), before the companion entry A381355.
+The two entries cite each other and give numerical tables rather than proofs.
+Section~\ref{sec:shift} treats the later family A393866--A393868, posed
+March 29, 2026, with its two logarithmic conjectures and a parity-run remark.
+
+\section{A coefficient congruence}
+\begin{lemma}\label{lem:low}
+Let $N\ge1$ and $m\ge1$ be integers with $\gcd(m,N!)=1$.
+For every $B\in1+x\mathbb Z[[x]]$,
+\[
+ B(x)^m\equiv1\pmod{(m,x^{N+1})}.
+\]
+Equivalently, $m$ divides $\coeff j B^m$ for every $1\le j\le N$.
+\end{lemma}
+\begin{proof}
+For $1\le k\le N$, we have $\gcd(k,m)=1$ and
+$k\binom mk=m\binom{m-1}{k-1}$. Thus $m\mid\binom mk$,
+where $\binom mk=0$ if $k>m$.
+Write $B=1+U$ with $U\in x\mathbb Z[[x]]$ and expand
+$(1+U)^m=\sum_{k=0}^m\binom mkU^k$.
+Terms with $k>N$ have degree greater than $N$; every remaining nonconstant
+term has coefficients divisible by $m$.
+\end{proof}
+
+\section{Construction and divisibility}
+\begin{theorem}\label{thm:general}
+Fix $c\in\mathbb Z$ and a sequence of positive integers $(m_n)_{n\ge2}$
+such that $\gcd(m_n,n!)=1$ for every $n\ge2$.
+There is exactly one $F\in\mathbb Q[[x]]$ such that
+\[
+ \coeff0F=1,\qquad\coeff1F=c,\qquad
+ \coeff nF^{m_n}=0\quad(n\ge2).
+\]
+It belongs to $\mathbb Z[[x]]$. If $a_n=\coeff{n-1}F'/F$, then
+$a_n\in\mathbb Z$ and $m_n\mid a_n$ for every $n\ge2$.
+\end{theorem}
+\begin{proof}
+Suppose $f_0=1,f_1=c,f_2,\ldots,f_{n-1}$ have been chosen and put
+$B_n=\sum_{j=0}^{n-1}f_jx^j$. For any $t\in\mathbb Q$, the binomial
+expansion gives, since $2n>n$,
+\begin{equation}\label{eq:triangular}
+ \coeff n(B_n+tx^n)^{m_n}=\coeff nB_n^{m_n}+m_nt.
+\end{equation}
+Consequently the only possible choice is
+\begin{equation}\label{eq:recurrence}
+ f_n=-\frac{\coeff nB_n^{m_n}}{m_n}.
+\end{equation}
+By induction $B_n$ has integer coefficients; Lemma~\ref{lem:low} with
+$N=n$ shows that the quotient in \eqref{eq:recurrence} is an integer.
+Choosing these coefficients for every $n$ defines $F$. Later coefficients
+cannot change an earlier equation, because its coefficient of degree $n$
+depends only on $f_0,\ldots,f_n$. This proves existence over $\mathbb Z$.
+Equation~\eqref{eq:triangular}, inductively over $\mathbb Q$, proves
+uniqueness there as well.
+
+Since $F(0)=1$, its inverse belongs to $\mathbb Z[[x]]$: if
+$F^{-1}=\sum g_jx^j$, then $g_0=1$ and
+$g_n=-\sum_{j=1}^nf_jg_{n-j}$. Hence $L=F'/F$ has integer coefficients.
+Fix $n\ge2$ and set $m=m_n$. Formal differentiation gives
+\begin{equation}\label{eq:derivative}
+ (F^m)'=mLF^m.
+\end{equation}
+The coefficient of degree $n-1$ on the left is $n\coeff nF^m=0$.
+As $m$ is a nonzero integer, \eqref{eq:derivative} implies
+\[
+ \coeff{n-1}(LF^m)=0.
+\]
+Lemma~\ref{lem:low} shows $F^m\equiv1\pmod{(m,x^{n+1})}$.
+Multiplication by the integral series $L$ therefore yields
+$\coeff{n-1}(LF^m)\equiv\coeff{n-1}L=a_n\pmod m$.
+It follows that $m\mid a_n$.
+\end{proof}
+
+\begin{corollary}[Hanna's conjecture]\label{cor:hanna}
+The series in \eqref{eq:source} exists uniquely over $\mathbb Q$, has
+integer coefficients, and its sequence \eqref{eq:target} satisfies
+$p_n\mid a_n$ for every $n>1$.
+\end{corollary}
+\begin{proof}
+The $n$th prime satisfies $p_n>n$: among the integers from $2$ through
+$n$ there are at most $n-1$ primes. Thus $p_n$ is coprime to $n!$.
+Apply Theorem~\ref{thm:general} with $c=1$ and $m_n=p_n$.
+\end{proof}
+
+\begin{corollary}[The companion coefficients]\label{cor:sibling}
+For the same $F$, every $\coeff jF^{p_n}/p_n$ is an integer when
+$n\ge2$ and $1\le j<p_n$. In particular,
+\[
+ b_n=\frac{\coeff{n-1}F^{p_n}}{p_n}\in\mathbb Z\quad(n\ge2).
+\]
+The logarithmic reconstruction is
+\[
+ F(x)=\exp\left(\sum_{n\ge1}\frac{a_n}{n}x^n\right)
+ \quad\text{in }\mathbb Q[[x]].
+\]
+\end{corollary}
+\begin{proof}
+Apply Lemma~\ref{lem:low} with $m=p_n$ and $N=p_n-1$; integrality of
+$F$ was proved above. For the last identity, let the series in parentheses
+be $S(x)$. Equation~\eqref{eq:target} gives $S'=F'/F$.
+Thus $(F\exp(-S))'=0$. Over $\mathbb Q$, a formal series with derivative
+zero is constant; its constant term here is one.
+\end{proof}
+
+The restriction $n>1$ is necessary: $a_1=1$ is not divisible by $p_1=2$.
+The general theorem also applies to any prime schedule $q_n>n$, to any
+integer $c$, and to the composite schedule $m_n=q_n^2$ with $q_n>n$ prime.
+The coprimality hypothesis cannot simply be dropped: $c=1,m_2=2$
+forces $f_2=-1/2$.
+These last two unrestricted readings are not asserted in the source:
+they fail at $n=1$ and at $(c,m_2)=(1,2)$, respectively.
+
+\begin{corollary}[Prescribed diagonals]\label{cor:diagonal}
+Under the exponent hypotheses of Theorem~\ref{thm:general}, let
+$c,d_2,d_3,\ldots$ be any integers. The equations
+$F(0)=1$, $\coeff1F=c$, and
+$\coeff nF^{m_n}=m_nd_n$ for $n\ge2$ determine a unique rational
+series. It is integral, and
+\[
+ \coeff{n-1}F'/F\equiv nd_n\pmod {m_n}\quad(n\ge2).
+\]
+\end{corollary}
+\begin{proof}
+At step $n$, replace \eqref{eq:recurrence} by
+$f_n=d_n-\coeff n B_n^{m_n}/m_n$. The same lemma proves integrality,
+and \eqref{eq:triangular} proves uniqueness. Differentiation now gives
+$\coeff{n-1}(LF^{m_n})=nd_n$. Since $F^{m_n}\equiv1$ through
+degree $n-1$ modulo $m_n$, this reduces to the claimed congruence.
+\end{proof}
+
+\section{The shifted-power family}\label{sec:shift}
+Write $U=\sum_{j\ge0}u_jx^j$ for the series in A393866, revision 17,
+NAME and PROGRAM \cite{shift}, defined by
+\begin{equation}\label{eq:shift}
+ u_0=1,\qquad
+ \coeff nU^{p_n}=p_n\coeff{n-1}U^{p_n}\quad(n\ge1).
+\end{equation}
+Its $n=1$ equation gives $u_1=1$. Put
+$\alpha_n=\coeff{n-1}U'/U$; these are the offset-one terms of
+A393867 \cite{shiftlog}. Its COMMENTS contains two conjectures:
+``a(n) is divisible by prime(n) for n > 1'' and ``all terms are odd.''
+
+\begin{corollary}\label{cor:shift}
+Equation~\eqref{eq:shift} has a unique rational solution, which is integral,
+and $p_n\mid\alpha_n$ for every $n>1$.
+More generally, for the exponents of Theorem~\ref{thm:general}, any
+integers $c,t_2,t_3,\ldots$ define a unique integral series $V$ by
+\[
+ V(0)=1,\quad\coeff1V=c,\quad
+ \coeff nV^{m_n}=m_nt_n\coeff{n-1}V^{m_n}\quad(n\ge2),
+\]
+and $m_n\mid\coeff{n-1}V'/V$ for every $n\ge2$.
+\end{corollary}
+\begin{proof}
+The coefficient of degree $n-1$ on the right depends only on the
+already determined coefficients. Thus the triangular construction applies
+with $d_n=t_n\coeff{n-1}B_n^{m_n}$. It is integral and divisible by
+$m_n$ by Lemma~\ref{lem:low}. The proof of
+Corollary~\ref{cor:diagonal}, degree by degree, gives the conclusion.
+Take $c=t_n=1$ and $m_n=p_n$ for \eqref{eq:shift}.
+\end{proof}
+
+\begin{corollary}\label{cor:odd}
+Every $\alpha_n$ is odd for $n\ge1$. Moreover,
+$u_{2k}\equiv u_{2k+1}\pmod2$ for every $k\ge0$.
+Consequently every finite maximal parity run in A393866 has even length.
+This is A393868, revision 9, COMMENTS: ``It appears that all terms
+are even'' \cite{runs}.
+\end{corollary}
+\begin{proof}
+Work in $\mathbb F_2[[x]]$, retaining the notation $U,u_j$ for their
+reductions. The first pair is $u_0=u_1=1$. Suppose the pairs with
+indices below $2k$ agree, where $k\ge1$. Set $n=2k+1$ and
+$H=U^{(p_n-1)/2}=\sum_{r\ge0}h_rx^r$. Here $p_n$ is odd,
+$H(0)=1$, and $U^{p_n}=UH^2$. Reducing \eqref{eq:shift} gives
+\[
+ 0=\coeff{2k+1}(1+x)UH^2
+   =\sum_{j=0}^k(u_{2j+1}+u_{2j})h_{k-j}^{\,2}
+   =u_{2k+1}+u_{2k}.
+\]
+Induction proves the pairing. Hence $U=(1+x)G(x^2)$ for
+$G=\sum_{k\ge0}u_{2k}x^k$ with $G(0)=1$. Formal differentiation
+in characteristic two yields $U'=G(x^2)$ and
+$U'/U=(1+x)^{-1}=\sum_{j\ge0}x^j$. This proves oddness of
+every $\alpha_n$. A parity change can occur only between two successive
+pairs, so every completed run has even length.
+\end{proof}
+
+\paragraph{A printed index and an unresolved limit.}
+A393866, revision 17, FORMULA (2), instead uses
+$\coeff n U'/U\equiv0\pmod{p_n}$ for $n>1$.
+This printed conjecture is false at $n=2$: from
+$U=1+x+2x^2+10x^3+\cdots$ one obtains
+$U'/U=1+3x+25x^2+\cdots$, and $3\nmid25$.
+The corrected exponent is $n-1$, exactly as in
+Corollary~\ref{cor:shift} and the indexed PARI calculation in A393866.
+The separate A393866 COMMENTS observation of a limiting ratio to the
+primorial near $0.078$ is not settled by these arguments.
+
+\section{Coverage and verification}
+{
+\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\linewidth}>{\raggedright\arraybackslash}p{0.55\linewidth}@{}}
+\toprule
+Source item & Mathematical coverage \\
+\midrule
+\endfirsthead
+\toprule
+Source item & Mathematical coverage (continued) \\
+\midrule
+\endhead
+A381355, rev.\ 13, COMMENTS & Conjecture proved in Corollary~\ref{cor:hanna}. \\
+A381353, rev.\ 19, NAME and PROGRAM & Not posed; integral existence and rational uniqueness established in Theorem~\ref{thm:general}. \\
+A381353, COMMENTS & Same divisibility statement, proved in Corollary~\ref{cor:hanna}. \\
+A381353, rev.\ 19, EXAMPLE, RELATED SEQUENCES & Not posed; all-index integrality of $b_n$ established in Corollary~\ref{cor:sibling}. \\
+A381355, rev.\ 13, EXAMPLE, logarithmic series & Proved identity, Corollary~\ref{cor:sibling}. \\
+A393866, rev.\ 17, NAME and PROGRAM & Not posed; integral existence and rational uniqueness established in Corollary~\ref{cor:shift}. \\
+A393867, rev.\ 16, COMMENTS, first conjecture & Proved: prime divisibility, Corollary~\ref{cor:shift}. \\
+A393867, rev.\ 16, COMMENTS, second conjecture & Proved: all terms odd, Corollary~\ref{cor:odd}. \\
+A393868, rev.\ 9, COMMENTS & Proved: all finite parity-run lengths even, Corollary~\ref{cor:odd}. \\
+A393866, rev.\ 17, FORMULA (2) & Refuted-and-corrected: $n=2$ gives $25\not\equiv0\pmod3$; correct degree $n-1$. \\
+A393866, rev.\ 17, COMMENTS, primorial limit & Not covered: existence and value of the suggested limit. \\
+Prescribed diagonals and composite exponents & Not posed; proved in Corollaries~\ref{cor:diagonal} and~\ref{cor:shift}. \\
+\bottomrule
+\end{longtable}
+}
+The displayed power tables illustrate the defining equations.
+
+All three formal sources below are fixed at revision\\
+\texttt{de81f09d1b5868b1ef5f62c9c8cab94962481c39}.\\
+The pinned \href{https://github.com/the-omega-institute/trureturing/blob/de81f09d1b5868b1ef5f62c9c8cab94962481c39/D5/S1/Recurrence/Invariants/HannaPrimeIndexLogDivisibility.lean}{\texttt{HannaPrimeIndexLogDivisibility.lean}}
+contains the declaration
+\begin{quote}\small
+\path{D5.S1.Recurrence.Invariants.HannaPrimeIndexLogDivisibility.result}.
+\end{quote}
+The declaration \texttt{result} proves \texttt{claim}, which asserts
+existence of a rational source
+series and, for every such series and every $n>1$, an integer $z$ with
+$\coeff{n-1}(F'/F)=p_nz$. This is the existence and prime-divisibility
+part of Corollary~\ref{cor:hanna}. Theorem~\ref{thm:general}, its
+coprime-composite extension and Corollary~\ref{cor:sibling} have the
+written proofs above.
+
+For the shifted series, the pinned
+\href{https://github.com/the-omega-institute/trureturing/blob/de81f09d1b5868b1ef5f62c9c8cab94962481c39/D5/S1/Recurrence/Parity/PrimePowerShiftLogDerivative.lean}{\texttt{PrimePowerShiftLogDerivative.lean}}
+proves the defining equations and uniqueness among integral
+series in \texttt{generating\_equation} and \texttt{generating\_unique};
+\texttt{hanna\_conjecture} proves $p_n\mid\alpha_n$ for $n>1$, and
+\texttt{printed\_formula\_false} proves failure of the printed degree-$n$
+formula. The pinned
+\href{https://github.com/the-omega-institute/trureturing/blob/de81f09d1b5868b1ef5f62c9c8cab94962481c39/D5/S1/Recurrence/Parity/PrimePowerShiftLogDerivativeOdd.lean}{\texttt{PrimePowerShiftLogDerivativeOdd.lean}}
+proves coefficient pairing in \texttt{generating\_coeff\_pair}
+and oddness of $\alpha_n$ for $n\ge1$ in \texttt{a393867\_odd}.
+The finite-run consequence and the general prescribed-diagonal and
+variable-shift results have the written proofs above.
+
+Exact finite checks in \texttt{verify.py} cover the original sequence
+through degree $64$ and $24$ combinations of exponent schedule and integer
+initial slope through degree $24$. The all-index assertions follow from
+the written proofs above. The companion file \texttt{verify\_siblings.py}
+checks the shifted series and logarithmic coefficients through degree $64$,
+all $32$ coefficient pairs available through degree $63$, completed parity
+runs, the printed-formula example, and $24$ prescribed-diagonal families
+through degree $24$. These are finite checks rather than proofs of an
+infinite statement.
+
+\small
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{target}
+Paul D. Hanna, \emph{A381355}, The On-Line Encyclopedia of Integer
+Sequences, posed March 11, 2025, revision 13, March 12, 2025,
+NAME, COMMENTS and EXAMPLE.
+\url{https://oeis.org/A381355};
+\href{https://oeis.org/history/view?seq=A381355&v=13}{revision 13}.
+
+\bibitem{source}
+Paul D. Hanna, \emph{A381353}, The On-Line Encyclopedia of Integer
+Sequences, posed March 11, 2025, revision 19, January 1, 2026,
+NAME, COMMENTS, EXAMPLE and PROGRAM.
+\url{https://oeis.org/A381353};
+\href{https://oeis.org/history/view?seq=A381353&v=19}{revision 19}.
+
+\bibitem{shift}
+Paul D. Hanna, \emph{A393866}, The On-Line Encyclopedia of Integer
+Sequences, March 29, 2026, revision 17, NAME, COMMENTS, FORMULA,
+EXAMPLE and PROGRAM. \url{https://oeis.org/A393866};
+\href{https://oeis.org/history/view?seq=A393866&v=17}{revision 17}.
+
+\bibitem{shiftlog}
+Paul D. Hanna, \emph{A393867}, The On-Line Encyclopedia of Integer
+Sequences, posed March 29, 2026, revision 16, August 20, 2026,
+COMMENTS and EXAMPLE. \url{https://oeis.org/A393867};
+\href{https://oeis.org/history/view?seq=A393867&v=16}{revision 16}.
+
+\bibitem{runs}
+Paul D. Hanna, \emph{A393868}, The On-Line Encyclopedia of Integer
+Sequences, March 29, 2026, revision 9, COMMENTS and EXAMPLE.
+\url{https://oeis.org/A393868};
+\href{https://oeis.org/history/view?seq=A393868&v=9}{revision 9}.
+
+\end{thebibliography}
+
+\noindent\small Copyright 2026 Haobo Ma and Wenlin Zhang.
+This note is licensed under Creative Commons Attribution 4.0 International
+(CC BY 4.0): \url{https://creativecommons.org/licenses/by/4.0/}.
+\end{document}

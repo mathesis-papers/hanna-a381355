@@ -28,9 +28,9 @@
         "name": "Wenlin Zhang"
       }
     ],
-    "concept_doi": null,
+    "concept_doi": "10.5281/zenodo.24406599",
     "current_version": 2,
-    "doi": null,
+    "doi": "10.5281/zenodo.24406600",
     "lean_source": {
       "revision": "de81f09d1b5868b1ef5f62c9c8cab94962481c39",
       "url": "https://github.com/the-omega-institute/trureturing/blob/de81f09d1b5868b1ef5f62c9c8cab94962481c39/D5/S1/Recurrence/Invariants/HannaPrimeIndexLogDivisibility.lean"

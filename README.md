@@ -30,3 +30,42 @@ Haobo Ma, Wenlin Zhang (2026). Prime-index divisibility in Hanna's OEIS A381355:
 ## Contributions
 
 Original authors are listed above. Formalization contributors and attribution are retained in `formalization/nodes.json`; repository pull requests do not confer verification or credit. Submit formalization attempts through the Mathesis attempt path described in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+<!-- Mathesis generated repository guide; refresh with paper.py front. -->
+
+## Reading and materials
+
+[Paper site](https://papers.trureturing.org/hanna-a381355/) · [Frozen PDF](paper.pdf) · [Citation](CITATION.cff)
+
+[中文阅读](https://papers.trureturing.org/hanna-a381355/hanna-a381355/zh/) · [Read in English](https://papers.trureturing.org/hanna-a381355/hanna-a381355/en/)
+
+[Slides](https://papers.trureturing.org/hanna-a381355/hanna-a381355/slides/) ([sources](books/hanna-a381355/slides/)) · [Videos](https://papers.trureturing.org/hanna-a381355/hanna-a381355/films/) ([sources](books/hanna-a381355/films/))
+
+These are publication routes; available built materials are inventoried in [mathesis-materials.json](https://papers.trureturing.org/hanna-a381355/mathesis-materials.json).
+
+## Book and formalization
+
+Catalog formalization status above is separate from the statement comparisons below. A nearby declaration does not verify the complete written result.
+
+| Book result | Comparison with formal base | Compared declaration |
+|---|---|---|
+| `companion` | none | — |
+| `coprime-schedules` | special case | `D5/S1/Recurrence/Invariants/HannaPrimeIndexLogDivisibility.result` |
+| `hanna` | variant | `D5/S1/Recurrence/Invariants/HannaPrimeIndexLogDivisibility.result` |
+| `low-coefficients` | none | — |
+| `parity-runs` | variant | `D5/S1/Recurrence/Parity/PrimePowerShiftLogDerivativeOdd.generating_coeff_pair` |
+| `prescribed-diagonals` | none | — |
+| `variable-shifts` | special case | `D5/S1/Recurrence/Parity/PrimePowerShiftLogDerivative.hanna_conjecture` |
+
+Book stage: **complete**; 0 pending claims. [Statement comparisons](.mathesis/REVIEW.md).
+
+## Repository map
+
+| Zone | Location |
+|---|---|
+| Paper record | `paper.json`, `CITATION.cff`, `paper.pdf`, `manuscript/`, `formalization/nodes.json`, `LICENSES/`, `.mathesis/` |
+| Content | `books/hanna-a381355/`: Chinese/English text, figures, visualizations, videos, slides, assets |
+| Machinery | Upstream and layer managed paths; update with `tbook template update` |
+| Repository front | This README, changelog, contribution guide, licence, project/site/pin configuration, `template.d/` |
+
+See [the enforced layout](docs/layer-mathesis/LAYOUT.md). Preparation run records and built outputs stay outside the committed tree.

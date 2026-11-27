@@ -1,0 +1,14 @@
+[site]
+repo = "mathesis-papers/hanna-a381355"
+base_url = "https://papers.trureturing.org/hanna-a381355/"
+post_build = ["python3", "-c", "from pathlib import Path\nimport runpy\nscript = Path(\"docs/layer-mathesis/scripts/site.py\")\nif script.is_file():\n    runpy.run_path(str(script), run_name=\"__main__\")\nelse:\n    print(\"Mathesis post-build skipped: layer script is absent from repository being built\")\n"]
+languages = ["zh", "en"]
+[site.title]
+zh = "Prime-index divisibility in Hanna's OEIS A381355: Revision 13, COMMENTS, and shifted-power siblings"
+en = "Prime-index divisibility in Hanna's OEIS A381355: Revision 13, COMMENTS, and shifted-power siblings"
+[trureturing]
+repo = "the-omega-institute/trureturing"
+branch = "dev"
+[books]
+order = ["hanna-a381355"]
+hide = []

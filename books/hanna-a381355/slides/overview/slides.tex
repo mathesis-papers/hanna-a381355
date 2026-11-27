@@ -1,0 +1,81 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{Why the nth prime divides the nth term}
+\subtitle{Hanna's OEIS A381355 and the shifted-power family}
+\author{Based on work by Haobo Ma and Wenlin Zhang}
+\institute{ChronoAI Pte Ltd, Singapore \\ National University of Singapore (Wenlin Zhang)}
+\date{Paper version 2}
+\begin{document}
+% Manuscript: Abstract and Section 1
+\begin{frame}
+  \titlepage
+  \note{Credit Paul D. Hanna for the sequence question in A381355, revision 13. This presentation explains the accepted paper, not a new proof review.}
+\end{frame}
+% Manuscript: Sections 1--4
+\begin{frame}{Outline}
+  \tableofcontents
+  \note{Start with a single coefficient, generalize the mechanism, then look at the shifted sequence and its boundary cases.}
+\end{frame}
+\section{Cancel one coefficient}
+\subsection{The prime schedule}
+% Manuscript: Section 1 and Corollary 3
+\begin{frame}{The second step already shows the idea}
+  \[ [x^2](1+x+bx^2)^3=3b+3. \]
+  Choose $b=-1$ to cancel it. At step three, use a fifth power.
+  \[ F=1+x-x^2+2x^3+\cdots,\qquad F'/F=1-3x+10x^2+\cdots. \]
+  The first multiples are $a_2=-3$ and $a_3=10$.
+  \note{The coefficient operator selects one degree. The product $F(F'/F)$ recovers $F'$. Term $n$ is at degree $n-1$, not degree $n$. No numerical value of $x$ is needed.}
+\end{frame}
+\section{Why it always works}
+\subsection{Coprime exponents}
+% Manuscript: Lemma 1 and Theorem 2
+\begin{frame}{Low coefficients disappear modulo the exponent}
+  \[ B=1+W,\quad [x^0]W=0,\qquad k\binom{m}{k}=m\binom{m-1}{k-1}. \]
+  If $\gcd(m,N!)=1$, then $B^m\equiv 1\pmod{(m,x^{N+1})}$.
+  \[ [x^n](B_n+tx^n)^{m_n}=[x^n]B_n^{m_n}+m_nt. \]
+  \note{Only $k\le N$ can contribute to a degree at most $N$. Each such $k$ is invertible modulo $m$. At step $n$, later coefficients cannot change the equation, and the forced correction $t$ is integral. Coprime composite exponents are allowed.}
+\end{frame}
+% Manuscript: Theorem 2 and Corollaries 3--5
+\begin{frame}{Differentiate, then take the remainder}
+  Put $L=F'/F$ and $m=m_n$. Then $(F^m)'=mLF^m$.
+  \[ [x^n]F^m=md_n \quad\Longrightarrow\quad
+     [x^{n-1}]L\equiv nd_n\pmod m. \]
+  The zero target gives divisibility. For the original problem, $p_n>n$.
+  \note{The inverse of a constant-one integer series is integral, by coefficient comparison. In degree $n-1$, the low coefficients of $F^m$ vanish modulo $m$, so the same residue survives in $L$. For $d_n=0$, choose the one-based prime and slope one. The claim begins at $n=2$; $a_1=1$.}
+\end{frame}
+\section{What a one-place shift changes}
+\subsection{Divisibility and parity}
+% Manuscript: Corollary 6 and Section 4, printed index
+\begin{frame}{The shifted source tests the index}
+  \[ [x^n]U^{p_n}=p_n[x^{n-1}]U^{p_n},\qquad U=1+x+2x^2+10x^3+\cdots. \]
+  \[ U'/U=1+3x+25x^2+\cdots. \]
+  At $n=2$, select $3$, not $25$: the printed degree-$n$ formula fails.
+  \note{The lower coefficient was already determined and is a multiple of $p_n$, so the prescribed diagonal still gives remainder zero. The corrected output is $[x^{n-1}]U'/U$. Reserve the separate primorial-ratio question; it is not settled here.}
+\end{frame}
+% Manuscript: Corollary 7
+\begin{frame}{Parity comes in pairs}
+  Modulo $2$, squares use only even degrees. The shifted equations give
+  \[ u_{2k}\equiv u_{2k+1}\pmod{2},\qquad U=(1+x)G(x^2). \]
+  Thus $U'/U=(1+x)^{-1}$ modulo $2$: every $\alpha_n$ is odd.
+  Every finite maximal parity run is made of whole pairs.
+  \note{Use induction starting at $u_0=u_1=1$. At $n=2k+1\ge3$, write $U^{p_n}=UH^2$. In the degree-$n$ coefficient of $(1+x)UH^2$, earlier pairs cancel and the constant coefficient of $H$ is one. The derivative of $G(x^2)$ vanishes modulo two.}
+\end{frame}
+% Manuscript: Section 5 and bibliography
+\begin{frame}{Sources and scope of evidence}
+  \begin{itemize}
+    \item Haobo Ma and Wenlin Zhang, version 2, \href{https://doi.org/10.5281/zenodo.24406600}{DOI 10.5281/zenodo.24406600}.
+    \item Paul D. Hanna: OEIS A381355 revision 13 and the shifted family A393866--A393868.
+    \item Lean covers the prime divisibility clause, related fixed-shift results, and the pairing and oddness clauses; the full generalizations are written proofs.
+  \end{itemize}
+  \note{Do not infer source integrality and rational uniqueness from the public Hanna divisibility statement alone, even though its private proof constructs and identifies a lift. In the shifted case the exposed uniqueness theorem is over the integers. Finite parity runs are a written consequence of pairing, not a separate frozen theorem at the inspected pin.}
+\end{frame}
+\appendix
+% Manuscript: Corollary 4
+\begin{frame}{Companion coefficients and reconstruction}
+  For $n\ge2$ and $1\le j<p_n$, $[x^j]F^{p_n}/p_n$ is integral.
+  \[ F(x)=\exp\left(\sum_{n\ge1}\frac{a_n}{n}x^n\right). \]
+  \note{Apply the low-coefficient lemma at $N=p_n-1$. If $S$ is the sum in the exponent, then $S'=F'/F$, so $(F\exp(-S))'=0$ and its constant term is one. This is a formal identity over $\mathbb{Q}$.}
+\end{frame}
+% Manuscript: Verification ledger (generated)
+\FormalVerification
+\end{document}

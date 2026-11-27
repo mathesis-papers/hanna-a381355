@@ -1,0 +1,17 @@
+[book]
+version = "2"
+authors = ["Haobo Ma", "Wenlin Zhang"]
+license = "CC-BY-4.0"
+editions = ["zh", "en"]
+date = "2026-11-22"
+[book.title]
+zh = "Prime-index divisibility in Hanna's OEIS A381355: Revision 13, COMMENTS, and shifted-power siblings"
+en = "Prime-index divisibility in Hanna's OEIS A381355: Revision 13, COMMENTS, and shifted-power siblings"
+[outputs]
+html = true
+pdf = ["academic"]
+epub = true
+[mathesis]
+work = "hanna-a381355"
+version = 2
+source_title = "Prime-index divisibility in Hanna's OEIS A381355: Revision 13, COMMENTS, and shifted-power siblings"

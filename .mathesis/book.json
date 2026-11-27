@@ -1,0 +1,62 @@
+{
+  "book": "hanna-a381355",
+  "pending_claims": [],
+  "results": {
+    "companion": {
+      "claim": "collected:hanna-a381355:2:s4",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "none",
+      "gids": []
+    },
+    "coprime-schedules": {
+      "claim": "collected:hanna-a381355:2:s2",
+      "compared_public_gid": "D5/S1/Recurrence/Invariants/HannaPrimeIndexLogDivisibility.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "special case",
+      "gids": []
+    },
+    "hanna": {
+      "claim": "collected:hanna-a381355:2:s3",
+      "compared_public_gid": "D5/S1/Recurrence/Invariants/HannaPrimeIndexLogDivisibility.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "variant",
+      "gids": []
+    },
+    "low-coefficients": {
+      "claim": "collected:hanna-a381355:2:s1",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "none",
+      "gids": []
+    },
+    "parity-runs": {
+      "claim": "collected:hanna-a381355:2:s7",
+      "compared_public_gid": "D5/S1/Recurrence/Parity/PrimePowerShiftLogDerivativeOdd.generating_coeff_pair",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "variant",
+      "gids": []
+    },
+    "prescribed-diagonals": {
+      "claim": "collected:hanna-a381355:2:s5",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "none",
+      "gids": []
+    },
+    "variable-shifts": {
+      "claim": "collected:hanna-a381355:2:s6",
+      "compared_public_gid": "D5/S1/Recurrence/Parity/PrimePowerShiftLogDerivative.hanna_conjecture",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "comparison_verdict": "special case",
+      "gids": []
+    }
+  },
+  "stage": "complete",
+  "titles": {
+    "en": "Prime-index divisibility in Hanna's OEIS A381355: Revision 13, COMMENTS, and shifted-power siblings",
+    "zh": "Prime-index divisibility in Hanna's OEIS A381355: Revision 13, COMMENTS, and shifted-power siblings"
+  },
+  "version": 2,
+  "work": "hanna-a381355"
+}

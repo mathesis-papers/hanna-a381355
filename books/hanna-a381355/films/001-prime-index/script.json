@@ -1,0 +1,22 @@
+{
+  "voice": "af_heart",
+  "speed": 0.94,
+  "say": {},
+  "music": {"bpm": 80, "progression": "a-minor"},
+  "scenes": [
+    {"id": "open", "name": "CANCEL", "lead": 0.6, "tail": 0.9, "lines": [
+      ["Can you cancel the squared term by choosing just one number?", "只选一个数，就能消掉平方项吗？"],
+      ["When we cube this expression, the squared coefficient is three b plus three. So b must be minus one.", "把这个式子立方，平方项系数是三倍的 b 加三，所以 b 必须等于负一。"],
+      ["At the next step use a fifth power. Each new coefficient leaves the earlier choices alone.", "下一步用五次方。新的系数不会改变此前的选择。"]
+    ]},
+    {"id": "transfer", "name": "DIFFERENTIATE", "lead": 0.5, "tail": 1.0, "lines": [
+      ["Our series has integer coefficients and constant term one. In its prime power, the positive-degree coefficients below that prime are all multiples of it.", "我们的级数系数为整数，常数项为一。取素数次幂后，次数大于零且小于该素数的系数都是这个素数的倍数。"],
+      ["Differentiate. The zero at degree n moves down to degree n minus one. The product rule puts the logarithmic derivative next to the power.", "求导后，第 n 次的零降到第 n 减一次。乘积法则把对数导数和原来的幂连在一起。"],
+      ["Take remainders. In these degrees the power acts like one, so the selected coefficient of the logarithmic derivative must be a multiple of the prime.", "取余后，在这些次数内，原来的幂相当于一，所以所选的对数导数系数一定是该素数的倍数。"]
+    ]},
+    {"id": "close", "name": "CHECK THE DEGREE", "lead": 0.5, "tail": 1.7, "lines": [
+      ["For Hanna's sequence the first examples are minus three and ten: multiples of three and five.", "Hanna 数列中的前两个例子是负三和十，分别是三和五的倍数。"],
+      ["The rule starts at step two. And the coefficient to read is at degree n minus one, never degree n.", "规律从第二步开始，并且要读取第 n 减一次的系数，而不是第 n 次。"]
+    ]}
+  ]
+}

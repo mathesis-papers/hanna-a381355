@@ -1,0 +1,9 @@
+kind = "academic"
+editions = ["en"]
+aspect = "4:3"
+structure_colour = "#0e2c8e"
+short_author = "Ma and Zhang (paper)"
+short_title = "Hanna's prime-index divisibility"
+
+[title]
+en = "Why the nth prime divides the nth term"
